@@ -6,7 +6,7 @@ Author: Shixiang Wang
 Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: Generate a polar plot for relationship.
 License: GPL (>= 3)
-Depends: 
+Imports: 
     ggplot2
 Encoding: UTF-8
 LazyData: true

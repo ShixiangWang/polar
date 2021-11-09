@@ -55,7 +55,10 @@ polar <- function(data1, data2, dot_alpha = 1, seg_size = 1, seg_alpha = dot_alp
     theme(
       axis.text.y = element_blank(),
       axis.line.y = element_blank(),
-      axis.ticks.y = element_blank()
+      axis.ticks.y = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.background = element_blank()
     ) +
     labs(y = NULL, x = NULL)
 }
@@ -104,3 +107,7 @@ geom_segment_straight <- function(...) {
   new_layer$geom <- geom
   return(new_layer)
 }
+
+utils::globalVariables(
+  c("xend", "yend")
+)

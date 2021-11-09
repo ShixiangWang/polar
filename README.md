@@ -1,17 +1,5 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # polar
 
@@ -27,7 +15,7 @@ remotes::install_github("ShixiangWang/polar")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(polar)
 
 data1 = data.frame(
@@ -44,8 +32,18 @@ data2 = data.frame(
 )
 
 polar(data1, data2)
+```
 
+<img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
 polar(data1, data2) + ggplot2::scale_color_brewer(palette = 'Reds')
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
+
+``` r
 polar(data1, data2) + ggplot2::scale_color_brewer(palette = "YlOrBr")
 ```
 
+<img src="man/figures/README-example-3.png" width="100%" />
