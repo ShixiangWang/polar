@@ -1,8 +1,13 @@
 Type: Package
-Package: polar
+Package: ggpolar
 Title: Dots and Their Connections in Polar Coordinate System
 Version: 0.2.0
-Author: Shixiang Wang
+Authors@R: 
+    person(given = "Shixiang",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "w_shixiang@163.com",
+           comment = c(ORCID = "0000-0001-9855-7357"))
 Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: Provides basic graphing functions to fully demonstrate
     point-to-point connections in a polar coordinate space.
@@ -11,6 +16,8 @@ Depends:
     ggplot2
 Suggests: 
     ggnewscale
+URL: https://github.com/ShixiangWang/polar
+BugReports: https://github.com/ShixiangWang/polar/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

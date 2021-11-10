@@ -13,20 +13,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-# polar: Dots and Their Connections in Polar Coordinate System
+# ggpolar: Dots and Their Connections in Polar Coordinate System
 
-`{polar}` provides a very flexible way to create dots in coordinate system
+`{ggpolar}` provides a very flexible way to create dots in coordinate system
 for event list and connect the dots with segments based on [`{ggplot2}`](https://ggplot2.tidyverse.org/).
 
 ## Installation
 
-You can install the released version of `{polar}` from CRAN with:
+You can install the released version of `{ggpolar}` from CRAN with:
 
 ``` r
-install.packages("polar")
+install.packages("ggpolar")
 ```
 
-You can install the development version of `{polar}` from GitHub with:
+You can install the development version of `{ggpolar}` from GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/polar")
@@ -37,7 +37,7 @@ remotes::install_github("ShixiangWang/polar")
 ### Init a polar plot
 
 ```{r example}
-library(polar)
+library(ggpolar)
 
 data <- data.frame(x = LETTERS[1:7])
 
@@ -90,7 +90,7 @@ if (requireNamespace("ggnewscale")) {
 
 ## Citation
 
-If you use `{polar}` in academic research, please cite the following paper along
+If you use `{ggpolar}` in academic research, please cite the following paper along
 with the GitHub repo.
 
 *Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction*, __eLife__. https://doi.org/10.7554/eLife.49020.

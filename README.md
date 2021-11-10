@@ -1,21 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# polar: Dots and Their Connections in Polar Coordinate System
+# ggpolar: Dots and Their Connections in Polar Coordinate System
 
-`{polar}` provides a very flexible way to create dots in coordinate
+`{ggpolar}` provides a very flexible way to create dots in coordinate
 system for event list and connect the dots with segments based on
 [`{ggplot2}`](https://ggplot2.tidyverse.org/).
 
 ## Installation
 
-You can install the released version of `{polar}` from CRAN with:
+You can install the released version of `{ggpolar}` from CRAN with:
 
 ``` r
-install.packages("polar")
+install.packages("ggpolar")
 ```
 
-You can install the development version of `{polar}` from GitHub with:
+You can install the development version of `{ggpolar}` from GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/polar")
@@ -26,8 +26,8 @@ remotes::install_github("ShixiangWang/polar")
 ### Init a polar plot
 
 ``` r
-library(polar)
-#> Loading required package: ggplot2
+library(ggpolar)
+#> 载入需要的程辑包：ggplot2
 
 data <- data.frame(x = LETTERS[1:7])
 
@@ -94,14 +94,14 @@ if (requireNamespace("ggnewscale")) {
   print(p6 + scale_color_brewer())
   print(p6 + scale_color_manual(values = c("darkgreen", "magenta")))
 }
-#> Loading required namespace: ggnewscale
+#> 载入需要的名字空间：ggnewscale
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" />
 
 ## Citation
 
-If you use `{polar}` in academic research, please cite the following
+If you use `{ggpolar}` in academic research, please cite the following
 paper along with the GitHub repo.
 
 *Antigen presentation and tumor immunogenicity in cancer immunotherapy
