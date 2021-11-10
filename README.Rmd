@@ -13,11 +13,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-# polar
+# polar: Dots and Their Connections in Polar Coordinate System
+
+`{polar}` provides a very flexible way to create dots in coordinate system
+for event list and connect the dots with segments based on [`{ggplot2}`](https://ggplot2.tidyverse.org/).
 
 ## Installation
 
-You can install the released version of polar from GitHub with:
+You can install the released version of `{polar}` from CRAN with:
+
+``` r
+install.packages("polar")
+```
+
+You can install the development version of `{polar}` from GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/polar")
@@ -25,27 +34,64 @@ remotes::install_github("ShixiangWang/polar")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+### Init a polar plot
 
 ```{r example}
 library(polar)
 
-data1 = data.frame(
-  x = letters[1:7],
-  dot_shape = c("r", "r", "r", "b", "b", "b", "b"),
-  dot_color = c("r", "r", "r", "b", "b", "b", "b"),
-  dot_size = abs(rnorm(7))
+data <- data.frame(x = LETTERS[1:7])
+
+p1 <- polar_init(data, x = x)
+p1
+
+# Set aes value
+p2 <- polar_init(data, x = x, size = 3, color = "red", alpha = 0.5)
+p2
+
+# Set aes mapping
+set.seed(123L)
+data1 <- data.frame(
+  x = LETTERS[1:7],
+  shape = c("r", "r", "r", "b", "b", "b", "b"),
+  color = c("r", "r", "r", "b", "b", "b", "b"),
+  size = abs(rnorm(7))
 )
-
-data2 = data.frame(
-  x1 = letters[1:7],
-  x2 = c("b", "c", "d", "e", "c", "a", "c"),
-  seg_color = c("r", "r", "r", "b", "b", "b", "b")
-)
-
-polar(data1, data2)
-
-polar(data1, data2) + ggplot2::scale_color_brewer(palette = 'Reds')
-polar(data1, data2) + ggplot2::scale_color_brewer(palette = "YlOrBr")
+# Check https://ggplot2.tidyverse.org/reference/geom_point.html
+# for how to use both stroke and color
+p3 <- polar_init(data1, x = x, aes(size = size, color = color, shape = shape), alpha = 0.5)
+p3
 ```
+
+### Connect polar dots
+
+```{r}
+data2 <- data.frame(
+  x1 = LETTERS[1:7],
+  x2 = c("B", "C", "D", "E", "C", "A", "C"),
+  color = c("r", "r", "r", "b", "b", "b", "b")
+)
+p4 <- p3 + polar_connect(data2, x1, x2)
+p4
+
+# Unlike polar_init, mappings don't need to be included in aes()
+p5 <- p3 + polar_connect(data2, x1, x2, color = color, alpha = 0.8, linetype = 2)
+p5
+
+# Use two different color scales
+if (requireNamespace("ggnewscale")) {
+  library(ggnewscale)
+  p6 = p3 +
+    new_scale("color") +
+    polar_connect(data2, x1, x2, color = color, alpha = 0.8, linetype = 2)
+  print(p6 + scale_color_brewer())
+  print(p6 + scale_color_manual(values = c("darkgreen", "magenta")))
+}
+```
+
+## Citation
+
+If you use `{polar}` in academic research, please cite the following paper along
+with the GitHub repo.
+
+*Antigen presentation and tumor immunogenicity in cancer immunotherapy response prediction*, __eLife__. https://doi.org/10.7554/eLife.49020.
 

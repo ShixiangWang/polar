@@ -1,13 +1,17 @@
 Type: Package
 Package: polar
-Title: Polar plot for correlation
-Version: 0.1.0
+Title: Dots and Their Connections in Polar Coordinate System
+Version: 0.2.0
 Author: Shixiang Wang
 Maintainer: Shixiang Wang <w_shixiang@163.com>
-Description: Generate a polar plot for relationship.
+Description: Provides basic graphing functions to fully demonstrate
+    point-to-point connections in a polar coordinate space.
 License: GPL (>= 3)
 Depends: 
     ggplot2
+Suggests: 
+    ggnewscale
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
