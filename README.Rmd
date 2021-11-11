@@ -4,6 +4,11 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![ggpolar status badge](https://shixiangwang.r-universe.dev/badges/ggpolar)](https://shixiangwang.r-universe.dev)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ggpolar)](https://CRAN.R-project.org/package=ggpolar)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/ggpolar?color=blue)](https://cran.r-project.org/package=ggpolar)
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

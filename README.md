@@ -1,6 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![ggpolar status
+badge](https://shixiangwang.r-universe.dev/badges/ggpolar)](https://shixiangwang.r-universe.dev)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ggpolar)](https://CRAN.R-project.org/package=ggpolar)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/ggpolar?color=blue)](https://cran.r-project.org/package=ggpolar)
+
 # ggpolar: Dots and Their Connections in Polar Coordinate System
 
 `{ggpolar}` provides a very flexible way to create dots in coordinate
@@ -27,7 +33,7 @@ remotes::install_github("ShixiangWang/polar")
 
 ``` r
 library(ggpolar)
-#> 载入需要的程辑包：ggplot2
+#> Loading required package: ggplot2
 
 data <- data.frame(x = LETTERS[1:7])
 
@@ -94,7 +100,7 @@ if (requireNamespace("ggnewscale")) {
   print(p6 + scale_color_brewer())
   print(p6 + scale_color_manual(values = c("darkgreen", "magenta")))
 }
-#> 载入需要的名字空间：ggnewscale
+#> Loading required namespace: ggnewscale
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" />
