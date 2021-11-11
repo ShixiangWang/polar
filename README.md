@@ -1,13 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# ggpolar: Dots and Their Connections in Polar Coordinate System
+
 [![ggpolar status
 badge](https://shixiangwang.r-universe.dev/badges/ggpolar)](https://shixiangwang.r-universe.dev)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ggpolar)](https://CRAN.R-project.org/package=ggpolar)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/ggpolar?color=blue)](https://cran.r-project.org/package=ggpolar)
-
-# ggpolar: Dots and Their Connections in Polar Coordinate System
 
 `{ggpolar}` provides a very flexible way to create dots in coordinate
 system for event list and connect the dots with segments based on
