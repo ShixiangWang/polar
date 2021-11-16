@@ -3,3 +3,8 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^CRAN-RELEASE$
+^doc$
+^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

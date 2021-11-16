@@ -1,0 +1,83 @@
+---
+title: "Polar plot for survival and correlation connection"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Polar plot for survival and correlation connection}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = "center",
+  dpi = 120,
+  fig.width = 6,
+  fig.height = 5
+)
+```
+
+```{r setup}
+library(ggpolar)
+library(survival)
+library(ezcox)
+```
+
+```{r}
+data = survival::lung
+head(data)
+```
+
+Pick several variables.
+
+```{r}
+vars = c("age", "sex", "ph.ecog", "ph.karno", "pat.karno", "meal.cal", "wt.loss")
+```
+
+
+### Univariable Cox analysis
+
+```{r, message=FALSE}
+df_cox = ezcox(data, vars)
+df_cox
+```
+
+### Correlation analysis
+
+```{r}
+vars_comb = combn(vars, 2, simplify = FALSE)
+cor_value = sapply(vars_comb, function(x) {
+  cor(data[[x[1]]], data[[x[2]]], use = "pairwise")
+})
+
+df_cor = cbind(as.data.frame(t(sapply(vars_comb, function(x) x))), cor_value)
+colnames(df_cor) = c("var1", "var2", "correlation")
+df_cor$size = abs(df_cor$correlation)
+df_cor$way = ifelse(df_cor$correlation > 0, "positive", "negative")
+df_cor
+```
+
+### Visualization
+
+```{r}
+df_cox$role = ifelse(
+  df_cox$p.value > 0.05, "non-signf",
+  ifelse(df_cox$HR < 1, "protector", "risker")
+)
+df_cox$`-log10(p)` = -log10(df_cox$p.value)
+```
+
+
+```{r}
+p = polar_init(df_cox, x = Variable, aes(color = role, size = `-log10(p)`))
+p
+```
+
+```{r}
+p + 
+  ggnewscale::new_scale("color") +
+  polar_connect(df_cor, x1 = var1, x2= var2, size = size, color = way, alpha = 0.3) + 
+  scale_size(range = c(0.1, 4))
+```
+
