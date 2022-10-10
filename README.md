@@ -44,6 +44,7 @@ p1
 <img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
+
 # Set aes value
 p2 <- polar_init(data, x = x, size = 3, color = "red", alpha = 0.5)
 p2
@@ -52,6 +53,7 @@ p2
 <img src="man/figures/README-example-2.png" width="100%" />
 
 ``` r
+
 # Set aes mapping
 set.seed(123L)
 data1 <- data.frame(
@@ -83,6 +85,7 @@ p4
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ``` r
+
 # Unlike polar_init, mappings don't need to be included in aes()
 p5 <- p3 + polar_connect(data2, x1, x2, color = color, alpha = 0.8, linetype = 2)
 p5
@@ -91,6 +94,7 @@ p5
 <img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
 
 ``` r
+
 # Use two different color scales
 if (requireNamespace("ggnewscale")) {
   library(ggnewscale)
@@ -101,6 +105,7 @@ if (requireNamespace("ggnewscale")) {
   print(p6 + scale_color_manual(values = c("darkgreen", "magenta")))
 }
 #> Loading required namespace: ggnewscale
+#> Warning: package 'ggnewscale' was built under R version 4.2.1
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" /><img src="man/figures/README-unnamed-chunk-2-4.png" width="100%" />
