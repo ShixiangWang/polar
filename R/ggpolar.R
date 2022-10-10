@@ -7,6 +7,7 @@
 #' @importFrom ggplot2 .pt aes_string alpha coord_polar element_blank
 #' expand_limits geom_point geom_segment ggplot ggproto labs theme
 #' zeroGrob
+#' @import rlang
 #'
 #' @return a `ggplot` object.
 #' @export

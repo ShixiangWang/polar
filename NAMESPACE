@@ -2,6 +2,7 @@
 
 export(polar_connect)
 export(polar_init)
+import(rlang)
 importFrom(ggplot2,.pt)
 importFrom(ggplot2,aes_string)
 importFrom(ggplot2,alpha)

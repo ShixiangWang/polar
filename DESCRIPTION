@@ -1,7 +1,7 @@
 Type: Package
 Package: ggpolar
 Title: Dots and Their Connections in Polar Coordinate System
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: 
     person("Shixiang", "Wang", , "w_shixiang@163.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9855-7357"))
@@ -13,15 +13,18 @@ URL: https://github.com/ShixiangWang/polar
 BugReports: https://github.com/ShixiangWang/polar/issues
 Depends: 
     ggplot2
+Imports:
+    rlang
 Suggests: 
     ezcox,
     ggnewscale,
     knitr,
     rmarkdown,
-    survival
+    survival,
+    cli
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1

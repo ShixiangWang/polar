@@ -13,7 +13,7 @@ geom_segment_straight <- function(...) {
         data,
         na.rm = na.rm, c(
           "x", "y", "xend", "yend",
-          "linetype", "size", "shape"
+          "linetype", "linewidth", "size", "shape"
         )
       )
       if (empty(data)) {
@@ -30,7 +30,7 @@ geom_segment_straight <- function(...) {
         default.units = "native", gp = grid::gpar(
           col = alpha(coords$colour, coords$alpha),
           fill = alpha(arrow.fill, coords$alpha),
-          lwd = coords$size * .pt,
+          lwd = (coords$linewidth %||% coords$size) * .pt,
           lty = coords$linetype,
           lineend = lineend,
           linejoin = linejoin
